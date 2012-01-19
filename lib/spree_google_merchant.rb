@@ -2,6 +2,7 @@ require 'spree_core'
 
 module SpreeGoogleMerchant
   class Engine < Rails::Engine
+    engine_name 'spree_google_merchant'
 
     config.autoload_paths += %W(#{config.root}/lib)
 
