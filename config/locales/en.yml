@@ -6,7 +6,17 @@ en:
   production_domain: "Production domain"
   google_merchant: "Google Merchant"
   google_merchants_description: "Provides a live feed of active products for Google Merchant" #Not to be confused with the above
-  google_merchant_gtin: GTIN
-  google_merchant_brand: Brand Name
-  google_merchant_product_category: Google Product Category
-  google_merchant_product_type: Product Type
+  activerecord:
+    attributes:
+      product:
+        google_merchant_gtin: Google Merchant GTIN
+        google_merchant_brand: Google Merchant Brand Name
+        google_merchant_product_category: Google Merchant Product Category
+        google_merchant_product_type: Google Merchant Product Type
+  helpers:
+    labels:
+      product:
+        google_merchant_gtin: GTIN
+        google_merchant_brand: Brand Name
+        google_merchant_product_category: Google Product Category
+        google_merchant_product_type: Product Type
