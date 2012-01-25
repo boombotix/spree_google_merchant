@@ -21,6 +21,10 @@ xml.rss "version" => "2.0", "xmlns:g" => "http://base.google.com/ns/1.0" do
         xml.tag! "g:condition", "new"
         xml.tag! "g:image_link", production_domain.sub(/\/$/, '') + product.images.first.attachment.url(:product) unless product.images.empty?
         xml.tag! "g:availability", product.on_hand > 0 ? 'in stock' : 'out of stock'
+        xml.tag! "g:gtin", product.google_merchant_gtin
+        xml.tag! "g:brand", product.google_merchant_brand
+        xml.tag! "g:google_product_category", product.google_merchant_product_category
+        xml.tag! "g:product_type", product.google_merchant_product_type
       end
     end
   end
