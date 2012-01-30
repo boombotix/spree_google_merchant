@@ -6,7 +6,6 @@ xml.rss "version" => "2.0", "xmlns:g" => "http://base.google.com/ns/1.0" do
     xml.description Spree::GoogleMerchant::Config[:google_merchant_description]
 
     production_domain = Spree::GoogleMerchant::Config[:production_domain]
-    production_domain = production_domain[0..-2] if production_domain[-1] == '/'
     xml.link production_domain
 
     @products.each do |product|
@@ -14,7 +13,7 @@ xml.rss "version" => "2.0", "xmlns:g" => "http://base.google.com/ns/1.0" do
         xml.id product.id.to_s
         xml.title product.name
         xml.description CGI.escapeHTML(product.description)
-        xml.link production_domain + products_path(product)
+        xml.link production_domain + 'products/' + product.permalink
         xml.tag! "g:mpn", product.sku.to_s
         xml.tag! "g:id", product.id.to_s
         xml.tag! "g:price", product_price(product, {:format_as_currency => false})
