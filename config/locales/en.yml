@@ -9,13 +9,15 @@ en:
   activerecord:
     attributes:
       product:
+        google_merchant_include_variants: Google Merchant Include Variants
         google_merchant_gtin: Google Merchant GTIN
         google_merchant_brand: Google Merchant Brand Name
         google_merchant_product_category: Google Merchant Product Category
         google_merchant_product_type: Google Merchant Product Type
   helpers:
-    labels:
+    label:
       product:
+        google_merchant_include_variants: Include Variants
         google_merchant_gtin: GTIN
         google_merchant_brand: Brand Name
         google_merchant_product_category: Google Product Category
