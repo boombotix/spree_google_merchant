@@ -10,7 +10,12 @@ xml.tag! "g:image_link", variant.product.images.first.attachment.url(:product) u
 xml.tag! "g:availability", variant.count_on_hand > 0 ? 'in stock' : 'out of stock'
 xml.tag! "g:google_product_category", variant.product.google_merchant_product_category
 xml.tag! "g:shipping_weight", variant.weight.to_s + ' lb'
-xml.tag! "g:tax", "0"
+xml.tag! "g:tax" {
+  xml.tag! "g:country", "US"
+  xml.tag! "g:region", "DE"
+  xml.tag! "g:rate", "0"
+  xml.tag! "g:tax_ship", "n"
+}
 xml.tag! "g:gender", variant.product.google_merchant_gender
 xml.tag! "g:age_group", "adult"
 xml.tag! "g:colour", variant.product.google_merchant_color
