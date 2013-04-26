@@ -5,7 +5,7 @@ Provides a live product feed for Google Merchant rather a file that you have to 
 
 To access the feed visit:
 
-    http://yoursite.com/products/google_merchant.rss
+    http://yoursite.com/google_merchant.rss
 
 Installation
 ------------
