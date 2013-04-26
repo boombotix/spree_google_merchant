@@ -1,5 +1,5 @@
 xml.title "#{variant.product.name} #{variant_options variant}"
-xml.description CGI.escapeHTML(strip_tags(variant.product.description))
+xml.description variant.product.description
 xml.link @production_domain + 'products/' + variant.product.permalink
 xml.tag! "sku", variant.sku.to_s
 xml.tag! "price", variant.price
