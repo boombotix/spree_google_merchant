@@ -1,4 +1,4 @@
-Spree::Core::Engine.routes.append do
+Spree::Core::Engine.routes.prepend do
   match "google_merchant", :to => 'products#google_merchant'
 
   namespace :admin do
