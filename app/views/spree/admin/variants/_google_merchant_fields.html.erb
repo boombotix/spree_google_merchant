@@ -1,9 +1,0 @@
-<% if @variant.product.google_merchant_include_variants %>
-  <h2><%= t(:google_merchant) %></h2>
-  <div data-hook="admin_variant_google_merchant">
-    <p>
-      <%= f.label :google_merchant_gtin %>
-      <%= f.text_field :google_merchant_gtin, :class => 'fullwidth' %>
-    </p>
-  </div>
-<% end %>
