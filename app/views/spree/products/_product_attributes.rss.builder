@@ -16,10 +16,10 @@ xml.link @production_domain + 'products/' + variant.product.permalink
 xml.tag! "sku", variant.sku.to_s
 xml.tag! "price", variant.price
 xml.tag! "category", category.value if category
-xml.tag! "brand", brand.value if category
-xml.tag! "department", department.value if category
+xml.tag! "brand", brand.value if brand
+xml.tag! "department", department.value if department
 xml.tag! "image", variant.product.images.first.attachment.url(:product) unless variant.product.images.empty?
-xml.tag! "color", color.value if category
+xml.tag! "color", color.value if color
 xml.tag! "GTIN", gtin.value if gtin
 xml.tag! "g:condition", "new"
 xml.tag! "g:availability", variant.count_on_hand > 0 ? 'in stock' : 'out of stock'
