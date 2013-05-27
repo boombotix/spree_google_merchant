@@ -4,11 +4,11 @@ google_merchant_department = Spree::Property.where(name: "google_merchant_depart
 google_merchant_color = Spree::Property.where(name: "google_merchant_color").first
 google_merchant_gtin = Spree::Property.where(name: "google_merchant_gtin").first
 
-category = variant.product.product_properties.where(property_id: google_merchant_product_category.id).first
-brand = variant.product.product_properties.where(property_id: google_merchant_brand.id).first
-department = variant.product.product_properties.where(property_id: google_merchant_department.id).first
-color = variant.product.product_properties.where(property_id: google_merchant_color.id).first
-gtin = variant.product.product_properties.where(property_id: google_merchant_gtin.id).first
+category = variant.product.product_properties.where(property_id: google_merchant_product_category.id).first if google_merchant_product_category
+brand = variant.product.product_properties.where(property_id: google_merchant_brand.id).first if google_merchant_brand
+department = variant.product.product_properties.where(property_id: google_merchant_department.id).first if google_merchant_department
+color = variant.product.product_properties.where(property_id: google_merchant_color.id).first if google_merchant_color
+gtin = variant.product.product_properties.where(property_id: google_merchant_gtin.id).first if google_merchant_gtin
 
 xml.title "#{variant.product.name} #{variant_options variant}"
 xml.description variant.product.description
