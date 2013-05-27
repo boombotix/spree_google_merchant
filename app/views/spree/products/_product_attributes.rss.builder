@@ -6,7 +6,7 @@ xml.description variant.product.description
 xml.link @production_domain + 'products/' + variant.product.permalink
 xml.tag! "sku", variant.sku.to_s
 xml.tag! "price", variant.price
-xml.tag! "category", HTMLEntities.new.decode category.value if category
+xml.tag! "category", HTMLEntities.new.decode(category.value) if category
 xml.tag! "brand", variant.product.properties.where(name: "google_merchant_brand").first
 xml.tag! "department", variant.product.properties.where(name: "google_merchant_gender").first
 xml.tag! "image", variant.product.images.first.attachment.url(:product) unless variant.product.images.empty?
