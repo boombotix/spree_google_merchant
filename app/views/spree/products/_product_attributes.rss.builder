@@ -22,5 +22,5 @@ xml.tag! "image", variant.product.images.first.attachment.url(:product) unless v
 xml.tag! "color", color.value if color
 xml.tag! "GTIN", gtin.value if gtin
 xml.tag! "g:condition", "new"
-xml.tag! "g:availability", variant.count_on_hand > 0 ? 'in stock' : 'out of stock'
+xml.tag! "g:availability", Spree::Stock::Quantifier.new(variant.id).total_on_hand > 0 ? 'in stock' : 'out of stock'
 xml.tag! "shipping_weight", variant.weight.to_s
