@@ -1,24 +1,38 @@
 <%= render :partial => 'spree/admin/shared/configuration_menu' %>
 
-<h1><%= Spree.t('edit_google_merchant_settings') %></h1>
+<% content_for :page_title do %>
+  <%= Spree.t("edit_google_merchant_settings") %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li>
+    <%= button_link_to Spree.t(:back_to_google_merchants), admin_google_merchants_url, :icon => 'icon-arrow-left' %>
+  </li>
+<% end %>
 
 <%= form_tag(admin_google_merchants_path, :method => :put) do %>
-  <p>
-    <label><%= Spree.t("google_merchant_title") %></label>
-    <%= text_field_tag('preferences[google_merchant_title]', Spree::GoogleMerchant::Config[:google_merchant_title]) %>
-  </p>
-  <p>
-    <label><%= Spree.t("google_merchant_description") %></label>
-    <%= text_field_tag('preferences[google_merchant_description]', Spree::GoogleMerchant::Config[:google_merchant_description]) %>
-  </p>
-  <p>
-    <label><%= Spree.t('production_domain') %></label>
-    <%= text_field_tag('preferences[production_domain]', Spree::GoogleMerchant::Config[:production_domain])%>
-  </p>
 
+  <fieldset class='no-border-top'>
+    <div class="row">
+      <div class='alpha four columns'>
+        <label for='preferences_google_merchant_title'><%= Spree.t("google_merchant_title") %></label>
+        <%= text_field_tag('preferences[google_merchant_title]', Spree::GoogleMerchant::Config[:google_merchant_title], class: 'fullwidth') %>
+      </div>
+      <div class='four columns'>
+        <label for='preferences_google_merchant_description'><%= Spree.t("google_merchant_description") %></label>
+        <%= text_field_tag('preferences[google_merchant_description]', Spree::GoogleMerchant::Config[:google_merchant_description], class: 'fullwidth') %>
+      </div>
+      <div class='omega four columns'>
+        <label for='preferences_production_domain'><%= Spree.t('production_domain') %></label>
+        <%= text_field_tag('preferences[production_domain]', Spree::GoogleMerchant::Config[:production_domain], class: 'fullwidth') %>
+      </div>
+    </div>
 
-  <p class="form-buttons">
-    <%= button Spree.t('update') %>
-    <%= Spree.t("or") %> <%= link_to Spree.t("cancel"), admin_google_merchants_url %>
-  </p>
+    <div class="form-buttons filter-actions actions" data-hook="buttons">
+      <%= button Spree.t('update'), class: 'button icon-refresh', icon: 'icon-refresh' %>
+      <span class="or"><%= Spree.t("or") %></span>
+      <%= link_to Spree.t("cancel"), admin_google_merchants_url, class: 'button icon-remove', icon: 'icon-remove' %>
+    </div>
+  </fieldset>
+
 <% end %>

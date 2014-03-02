@@ -7,6 +7,7 @@ en:
   google_merchant: "Google Merchant"
   google_merchants_description: "Provides a live feed of active products for Google Merchant" #Not to be confused with the above
   view_google_merchant_feed: "View Google Merchant Feed"
+  back_to_google_merchants: "Back To Google Merchants"
   activerecord:
     attributes:
       product:
