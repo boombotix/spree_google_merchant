@@ -3,5 +3,5 @@ Spree::Core::Engine.add_routes do
     resource :google_merchants, only: [:update, :edit, :show]
   end
 
-  match '/admin/google_merchant', to: 'products#google_merchant', via: [:get, :post]
+  match '/google_merchant', to: 'products#google_merchant', via: [:get, :post]
 end

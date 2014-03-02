@@ -7,14 +7,14 @@ google_merchant_color            = Spree::Property.where(name: "google_merchant_
 google_merchant_gtin             = Spree::Property.where(name: "google_merchant_gtin").first
 
 category   = variant.product.product_properties.where(property_id: google_merchant_product_category.id).first if google_merchant_product_category
-brand      = variant.product.product_properties.where(property_id: google_merchant_brand.id).first if google_merchant_brand
-department = variant.product.product_properties.where(property_id: google_merchant_department.id).first if google_merchant_department
-color      = variant.product.product_properties.where(property_id: google_merchant_color.id).first if google_merchant_color
-gtin       = variant.product.product_properties.where(property_id: google_merchant_gtin.id).first if google_merchant_gtin
+brand      = variant.product.product_properties.where(property_id: google_merchant_brand.id).first            if google_merchant_brand
+department = variant.product.product_properties.where(property_id: google_merchant_department.id).first       if google_merchant_department
+color      = variant.product.product_properties.where(property_id: google_merchant_color.id).first            if google_merchant_color
+gtin       = variant.product.product_properties.where(property_id: google_merchant_gtin.id).first             if google_merchant_gtin
 
 xml.title "#{variant.product.name} #{variant_options variant}"
 xml.description variant.product.description
-xml.link @production_domain + 'products/' + variant.product.permalink
+xml.link @production_domain + 'products/' + variant.product.slug
 xml.tag! "sku", variant.sku.to_s
 xml.tag! "brand", brand.value if brand
 xml.tag! "department", department.value if department
