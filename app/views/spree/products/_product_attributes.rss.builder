@@ -14,7 +14,7 @@ gtin       = variant.product.product_properties.where(property_id: google_mercha
 
 xml.title "#{variant.product.name} #{variant_options variant}"
 xml.description variant.product.description
-xml.link @production_domain + 'products/' + variant.product.slug
+xml.link @production_domain + 'products/' + variant.product.permalink
 xml.tag! "sku", variant.sku.to_s
 xml.tag! "brand", brand.value if brand
 xml.tag! "department", department.value if department

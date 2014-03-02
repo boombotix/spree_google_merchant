@@ -7,6 +7,6 @@ group :development, :test do
   gem 'pry'
 end
 
-gem 'spree', '2.2.0'
+gem 'spree', '2.1.0'
 
 gemspec
