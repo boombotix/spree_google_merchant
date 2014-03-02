@@ -4,6 +4,7 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 
 require 'rspec/rails'
+require 'ffaker'
 require 'database_cleaner'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
@@ -14,6 +15,10 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 require 'spree/testing_support/factories'
 require 'spree/testing_support/order_walkthrough'
 require 'spree/testing_support/preferences'
+require 'spree/testing_support/controller_requests'
+# require 'spree/testing_support/capybara_ext'
+require 'spree/testing_support/url_helpers'
+require 'spree/testing_support/authorization_helpers'
 
 # require 'capybara/poltergeist'
 # Capybara.javascript_driver = :poltergeist
@@ -48,6 +53,10 @@ RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   config.include FactoryGirl::Syntax::Methods
+  config.include Spree::TestingSupport::UrlHelpers
+  config.include Spree::TestingSupport::ControllerRequests, :type => :controller
+  config.include Rack::Test::Methods, :type => :feature
+
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
