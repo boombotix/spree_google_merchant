@@ -1,7 +1,3 @@
-Spree::Core::Engine.routes.prepend do
-  match "google_merchant", :to => 'products#google_merchant', :via => [:get, :post]
-
-  namespace :admin do
-    resource :google_merchants
-  end
+Spree::Core::Engine.routes.append do
+  match '/admin/google_merchant', to: 'products#google_merchant', via: [:get, :post], as: 'admin_google_merchants'
 end

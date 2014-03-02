@@ -1,5 +1,7 @@
+source 'https://rubygems.org'
+
 group :development do
-  gem 'rails', '3.1.3'
+  gem 'rails', '~> 4'
 end
 
 gemspec
