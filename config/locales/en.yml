@@ -6,6 +6,7 @@ en:
   production_domain: "Production domain"
   google_merchant: "Google Merchant"
   google_merchants_description: "Provides a live feed of active products for Google Merchant" #Not to be confused with the above
+  view_google_merchant_feed: "View Google Merchant Feed"
   activerecord:
     attributes:
       product:
