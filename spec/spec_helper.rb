@@ -6,22 +6,23 @@ require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 require 'rspec/rails'
 require 'ffaker'
 require 'database_cleaner'
+require 'capybara/poltergeist'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
-Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |f| require f }
 
 # Requires factories defined in spree_core
 require 'spree/testing_support/factories'
 require 'spree/testing_support/order_walkthrough'
 require 'spree/testing_support/preferences'
 require 'spree/testing_support/controller_requests'
-# require 'spree/testing_support/capybara_ext'
+require 'spree/testing_support/capybara_ext'
 require 'spree/testing_support/url_helpers'
 require 'spree/testing_support/authorization_helpers'
 
 # require 'capybara/poltergeist'
-# Capybara.javascript_driver = :poltergeist
+Capybara.javascript_driver = :poltergeist
 
 RSpec.configure do |config|
   config.include Spree::TestingSupport::Preferences
