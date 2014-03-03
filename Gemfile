@@ -5,8 +5,10 @@ group :development, :test do
   gem 'sqlite3'
   gem 'database_cleaner', '1.0.1'
   gem 'pry'
+  gem 'poltergeist',      '~> 1.5'
 end
 
 gem 'spree', '2.2.0'
+gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-2-stable'
 
 gemspec
