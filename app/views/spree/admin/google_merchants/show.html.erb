@@ -1,16 +1,14 @@
-<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+<%#= render :partial => 'spree/admin/shared/configuration_menu' %>
 
 <% content_for :page_title do %>
   <%= Spree.t("google_merchant_settings") %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <li>
     <%= button_link_to Spree.t(:view_google_merchant_feed), '/google_merchant.rss', :icon => 'icon-arrow-right' %>
-  </li>
 <% end %>
 
-<table>
+<table class="table">
   <tr>
     <th scope="row"><%= Spree.t("google_merchant_title") %>:</th>
     <td><%= Spree::GoogleMerchant::Config[:google_merchant_title] %></td>
@@ -26,5 +24,5 @@
 </table>
 
 <p>
-  <%= link_to_with_icon 'edit', Spree.t("edit"), edit_admin_google_merchants_path, id: 'admin_google_merchants_link', class: 'button' %>
+  <%= link_to_with_icon 'edit', Spree.t("edit"), edit_admin_google_merchants_path, id: 'admin_google_merchants_link', class: 'btn btn-default' %>
 </p>
