@@ -26,8 +26,9 @@ Capybara.javascript_driver = :poltergeist
 
 RSpec.configure do |config|
   config.include Spree::TestingSupport::Preferences
+  config.infer_spec_type_from_file_location!
 
-  config.before(:each) do
+  config.before(:each) do |example|
     if example.metadata[:js]
       DatabaseCleaner.strategy = :truncation
     else

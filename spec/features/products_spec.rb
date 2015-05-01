@@ -14,15 +14,15 @@ feature :products do
       xml = Nokogiri::XML(page.body)
 
       # ensure 1 product
-      xml.css('item').size.should eql(1)
+      expect(xml.css('item').size).to eql(1)
 
       # ensure RSS formatting tag
-      xml.css('rss').size.should eql(1)
+      expect(xml.css('rss').size).to eql(1)
 
       # ensure title, description, domain match our config
-      xml.css("rss").first.css('title').first.children.first.text.should eql(Spree::GoogleMerchant::Config.google_merchant_title)
-      xml.css("rss").first.css('description').first.children.first.text.should eql(Spree::GoogleMerchant::Config.google_merchant_description)
-      xml.css("rss").first.css('link').first.children.first.text.should eql(Spree::GoogleMerchant::Config.production_domain)
+      expect(xml.css("rss").first.css('title').first.children.first.text).to eql(Spree::GoogleMerchant::Config.google_merchant_title)
+      expect(xml.css("rss").first.css('description').first.children.first.text).to eql(Spree::GoogleMerchant::Config.google_merchant_description)
+      expect(xml.css("rss").first.css('link').first.children.first.text).to eql(Spree::GoogleMerchant::Config.production_domain)
     end
   end
 end

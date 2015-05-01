@@ -20,9 +20,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'spree_api'
   s.add_dependency 'spree_backend'
 
-  s.add_development_dependency 'factory_girl_rails', '~> 4.2.0'
-  s.add_development_dependency 'rspec-rails', '~> 2.13'
-  s.add_development_dependency 'capybara', '2.1.0'
+  s.add_development_dependency 'factory_girl_rails', '~> 4.5.0'
+  s.add_development_dependency 'rspec-rails', '~> 3.2'
+  s.add_development_dependency 'capybara', '2.4.4'
   s.add_development_dependency 'launchy'
   s.add_development_dependency 'sass-rails', '~> 4.0.0'
   s.add_development_dependency 'coffee-rails', '~> 4.0.0'
