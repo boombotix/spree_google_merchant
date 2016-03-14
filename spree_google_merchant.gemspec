@@ -1,9 +1,9 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_google_merchant'
-  s.version     = '1.1.0'
-  s.summary     = 'Google Merchant RSS feed for Spree 2.2'
-  s.description = 'Google Merchant RSS feed for Spree 2.2'
+  s.version     = '2.4.0'
+  s.summary     = 'Google Merchant RSS feed for Spree 2.4'
+  s.description = 'Google Merchant RSS feed for Spree 2.4'
   s.required_ruby_version = '>= 2.0.0'
 
   s.author   = 'Tim Neems, sebastyuiop, Ben Radler'
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 2.2'
+  s.add_dependency 'spree_core', '~> 2.4'
   s.add_dependency 'spree_api'
   s.add_dependency 'spree_backend'
 
@@ -24,13 +24,11 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec-rails', '~> 2.13'
   s.add_development_dependency 'capybara', '2.1.0'
   s.add_development_dependency 'launchy'
-  s.add_development_dependency 'sass-rails', '~> 4.0.0'
+  s.add_development_dependency 'sass-rails', '~> 4.0.2'
   s.add_development_dependency 'coffee-rails', '~> 4.0.0'
   s.add_development_dependency 'email_spec', '~> 1.5.0'
   s.add_development_dependency 'ffaker'
   s.add_development_dependency 'shoulda-matchers', '~> 1.5'
   s.add_development_dependency 'database_cleaner', '~> 1.2.0'
   s.add_development_dependency 'poltergeist', '~> 1.5.0'
-  # s.add_development_dependency 'selenium-webdriver'
-  # s.add_development_dependency 'simplecov', '~> 0.7.1'
 end

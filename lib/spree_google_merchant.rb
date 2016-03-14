@@ -10,6 +10,7 @@ module SpreeGoogleMerchant
 
     initializer "spree.google_merchant.preferences", :before => :load_config_initializers do |app|
       Spree::GoogleMerchant::Config = Spree::GoogleMerchantConfiguration.new
+      Spree::GoogleMerchant::Manager = Spree::GoogleMerchant::ProductManager.new
     end
 
     def self.activate
