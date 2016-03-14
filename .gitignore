@@ -9,3 +9,4 @@ tmp
 nbproject
 *.swp
 .bundle
+spec/dummy

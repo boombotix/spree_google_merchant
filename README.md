@@ -1,7 +1,7 @@
 # Summary
 
 [![Code Climate](https://codeclimate.com/repos/5313bdf0695680405a00c039/badges/cd37fe1b53bc4d556c29/gpa.png)](https://codeclimate.com/repos/5313bdf0695680405a00c039/feed)
-[![Build Status](https://travis-ci.org/Lordnibbler/spree_google_merchant.png?branch=2-2-stable)](https://travis-ci.org/Lordnibbler/spree_google_merchant)
+[![Build Status](https://travis-ci.org/Lordnibbler/spree_google_merchant.png?branch=2-4-stable)](https://travis-ci.org/Lordnibbler/spree_google_merchant)
 
 Provides an up-to-date RSS product feed for Google Merchant rather a file that you have to upload. This is a very basic extension so feel free to help improve it!
 
@@ -21,6 +21,14 @@ Then bundle
 ```ruby
 bundle install
 ```
+
+Then (if you wish to customize the feed), install the config/initializers/google_merchant.rb file:
+
+```ruby
+rails g spree_google_merchant:install
+```
+
+You can view the initializer to get an idea how to customize things.
 
 Next, configure the feed title, description and site URL by browsing to the Google Merchant settings page in `Admin -> Configuration`
 
