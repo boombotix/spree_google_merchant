@@ -22,6 +22,14 @@ Then bundle
 bundle install
 ```
 
+Then (if you wish to customize the feed), install the config/initializers/google_merchant.rb file:
+
+```ruby
+rails g spree_google_merchant:install
+```
+
+You can view the initializer to get an idea how to customize things.
+
 Next, configure the feed title, description and site URL by browsing to the Google Merchant settings page in `Admin -> Configuration`
 
 Finally, set up your products in Spree by editing the product's properties.  You should add the following properties:

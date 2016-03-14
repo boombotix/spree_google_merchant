@@ -11,10 +11,30 @@ describe Spree::ProductsController do
       allow(controller).to receive(:spree_current_user) { user }
     end
 
-    it 'sets @products instance variable' do
+    it 'sets the right instance variable' do
       spree_get :google_merchant, format: :rss
-      expect(assigns(:products)).to_not be_nil
-      expect(assigns(:products).first).to eql(product)
+      expect(assigns(:items)).to_not be_nil
+      expect(assigns(:items).first).to eql(product)
+    end
+
+    context 'with full_variants set' do
+      before do
+        Spree::GoogleMerchant::Manager.include_variants = true
+      end
+
+      it 'sets the right instance variable with only master variants' do
+        spree_get :google_merchant, format: :rss
+
+        expect(assigns(:items).first).to eql(product.master)
+      end
+
+      it 'sets the right instance variable with multiple variants' do
+        variant = create(:variant, product: product)
+
+        spree_get :google_merchant, format: :rss
+
+        expect(assigns(:items).first).to eql(variant)
+      end
     end
 
     it 'renders the proper RSS template' do
