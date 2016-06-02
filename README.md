@@ -13,7 +13,7 @@ To test and access the RSS feed visit:
 To start with you'll need a Google Merchant account. Then, add the gem to your `Gemfile`
 
 ```ruby
-gem "spree_google_merchant", github: 'boombotix/spree_google_merchant.git'
+gem "spree_google_merchant", github: 'boombotix/spree_google_merchant'
 ```
 
 Then bundle
